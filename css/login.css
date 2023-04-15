@@ -1,10 +1,11 @@
 body {
   background: #ABCDEF;
   font-family: Assistant, sans-serif;
-  display: flex;
-  min-height: 90vh;
 }
-
+.login_f{
+  min-height: 90vh;
+  display: flex;
+}
 .login {
   color: white;
   background: #136a8a;

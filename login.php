@@ -15,7 +15,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['password'])){
     
 </head>
 
-<body>
+<body class="login_f">
     <section class='login' id='login'>
         <div class='head'>
             <h1 class='company Achenasukh'><span>Achena</span> sukh</h1>

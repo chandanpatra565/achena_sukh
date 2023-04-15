@@ -4,3 +4,4 @@
 <script src="./js/log_out.js"></script>
 <script src="./js/index.js"></script>
 <link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/home.css">

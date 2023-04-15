@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   include "Data_Base_conn.php";
 
   // Insert the data into the home_page table
-  $query = "INSERT INTO home_page_data (img, text) VALUES ('$imageData', '$text')";
+  $query = "INSERT INTO carousel_database (img) VALUES ('$imageData')";
   mysqli_query($conn, $query);
 
   // Close the database connection and redirect back to the form
