@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 }
 
 // Step 2: Fetch data from home_page table
-$sql = "SELECT * FROM home_page_data";
+$sql = "SELECT * FROM donation";
 $result = $conn->query($sql);
 
 // Check if there are any results
@@ -35,5 +35,4 @@ if ($result->num_rows > 0) {
 
 // Step 3: Close the database connection
 $conn->close();
-header('Location: index.php');
 ?>

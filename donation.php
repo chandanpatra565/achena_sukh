@@ -2,7 +2,8 @@
     session_start();
     error_reporting(0);
     if(isset($_SESSION['username']) && isset($_SESSION['password'])){
-        require "print_data.php";
+        require "donation_print_data.php";
+        //3 data base insert_carousel.php Carousel_Delete_data.php Carousel_Data_Update.php
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,25 +11,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Document</title>
     <?php include "link.php"; ?>
 </head>
 <body>
     <section class="all_pages_data">
         <?php include "Header.php" ?>
-        
         <section class="home_page_data">
-            
-            <h1 class="h1_home_page_text">Home page Image and text</h1>
-            <form action="insert.php" method="POST" enctype="multipart/form-data">
-                <div class="home_page_img_section">
-                    <input type="file" name="image">
-                    <input type="text" name="text" placeholder="Enter Your text">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-            
-            <div id="overflowTest">
+                <h1 class="h1_home_page_text">Donation page Image and text</h1>
+                <form action="donation_insert.php" method="POST" enctype="multipart/form-data">
+                    <div class="home_page_img_section">
+                        <input type="file" name="image">
+                        <input type="text" name="text" placeholder="Enter Your text">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+                <div id="overflowTest">
                 
                     <?php
                             $items = $json_data;
@@ -39,10 +37,10 @@
                                 $img = $item['img'];
                                 $text = $item['text'];
                                 ?>
-                                <form action="Delete_data.php?id=<?php echo $id ?>" class="f_right" method="post" enctype="multipart/form-data">
+                                <form action="donation_del_data.php?id=<?php echo $id ?>" class="f_right" method="post" enctype="multipart/form-data">
                                     <button type="submit">Delete</button>
                                 </form>
-                                <form action="Data_Update.php?id=<?php echo $id ?>" method="POST" enctype="multipart/form-data">
+                                <form action="donation_data_update.php?id=<?php echo $id ?>" method="POST" enctype="multipart/form-data">
                                     <div class="div">
                                         <div class="image">
                                             <div>
@@ -67,12 +65,9 @@
                                 
                             }
                     ?>  
-            </div>       
-
+            </div>
         </section>
     </section>
-    
-    
 </body>
 </html>
 <?php

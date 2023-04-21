@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 }
 
 // Step 2: Fetch data from home_page table
-$sql = "SELECT * FROM home_page_data";
+$sql = "SELECT * FROM carousel_database";
 $result = $conn->query($sql);
 
 // Check if there are any results
@@ -21,19 +21,19 @@ if ($result->num_rows > 0) {
         // Add the row data to the $rows array
         $rows[] = array(
             "id" => $row["id"],
-            "img" => $image_base64,
-            "text" => $row["text"]
+            "type" => $row["Type"],
+            "img" => $image_base64
         );
     }
     // Encode the $rows array as JSON
     $json_data = json_encode($rows);
-    $json_data = json_decode($json_data, true);
-    return $json_data;
+    $carousel_json_data = json_decode($json_data, true);
+    return $carousel_json_data;
 } else {
     return "No data found.";
 }
 
 // Step 3: Close the database connection
 $conn->close();
-header('Location: index.php');
+header('Location: Carousel_all.php');
 ?>

@@ -26,7 +26,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['password'])){
                 <input type="text" placeholder='Username' class='text' id='username' name="username"><br>
                 <input type="password" placeholder='Password' id='password' name="password" class='password'><br>
                 <input type="button" value="Login" class='btn-login' id='do-login'>
-                <input type="button" value="Forgot?" class="forgot" id="forgot">
+                
             </form>
         </div>
     </section>
